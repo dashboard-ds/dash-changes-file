@@ -1,0 +1,75 @@
+html, body
+{
+	background-color:#f0efef !important;
+}
+body .site-header 
+{
+    background-color: #f0efef !important;
+	color:#009cdd !important;
+}
+body #customiziedlogo
+{
+	color:#009cdd !important;
+}
+body .top-option-bar
+{
+	background-color:#009cdd !important;
+}
+body a.gotoexternal
+{
+	color:#009cdd !important;
+}
+body thead,body thead tr,body .headcol
+{
+	background-color:#f0efef !important;
+}
+body table a
+{
+	color:#009cdd !important;
+}
+::-webkit-scrollbar-track 
+{
+    background: #f0efef !important;
+}
+::-webkit-scrollbar 
+{
+    width: 13px;
+    height: 13px;	
+}
+::-webkit-scrollbar-thumb 
+{
+    border: 3px solid #f0efef !important;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.2);
+}
+body div.sticky
+{
+	background: #f0efef !important;
+	color:#009cdd !important;
+}
+body .insight-group
+{
+	color:#009cdd !important;
+}
+body .mc-iv-right
+{
+	background: #f0efef !important;
+}
+body #insight-suboption select
+{
+	background: #f0efef !important;
+}
+body .filter-right-side-view-wrapper-popup, body .comment-right-side-view-wrapper-popup, body .tagging-right-side-view-wrapper-popup, body .category-right-side-view-wrapper-popup
+{
+	background: #ddd !important;
+}
+body .layout-modal
+{
+	background: #ddd !important;
+}
+body .filter-card-wd-100
+{
+	background: #f0efef !important;
+}
+

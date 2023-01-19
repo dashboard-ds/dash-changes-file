@@ -1,0 +1,115 @@
+@font-face 
+{
+  font-family: 'Telegraf';
+  src: url('font/Telegraf-Regular.otf');  
+  font-weight: normal;
+}
+@font-face 
+{
+  font-family: 'Telegraf';
+  src: url('font/Telegraf-Bold.otf');
+  font-weight: bold;
+}
+html,body
+   {
+	padding:0px;
+	margin:0px;
+	color: #777777;
+    font-family: 'Telegraf','Bahnschrift', sans-serif;
+	background-color:#F6EEE1;
+    font-size:12px;                                             
+	}
+h2{
+		
+		}
+	h3
+	{
+		color: #528ff0
+	}
+	  h3::after
+	  {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 4px;
+      background: #49dab5;
+      margin-top: 16px;
+	  }
+ .button 
+ {
+  background-color: #528ff0; /* Green */
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #528ff0;
+}
+
+.button1:hover {
+  background-color: #528ff0;
+  color: white;
+}
+	  .client-info
+	  {
+		  font-size:16px;
+	  }
+	  .txt-upper
+	  {
+		  text-transform: uppercase;
+		  font-weight:bold;
+		  margin:5px 0px;
+	  }
+	  .ft-size{
+		  font-size:17px;
+	  }
+	  a
+	{
+		text-decoration:none;
+	}
+	  a:hover
+	{
+		text-decoration:none;
+	}
+	.user-list
+{
+	max-width:100%;
+	overflow:auto;
+	margin:0px 20px;
+	clear:both;
+}
+	.client-list
+{
+	max-width:100%;
+	overflow:auto;
+	margin:0px 20px;
+	clear:both;
+}
+#pagination
+{
+	text-align:right;
+	padding:0px 20px;
+}
+.pagination{
+	cursor:pointer;
+}
+.show-msg
+{
+	display:none;
+}
+.module-rights-label
+	{
+		
+		min-width:80px;
+	}
