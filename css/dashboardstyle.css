@@ -806,6 +806,7 @@ th.headcol
 {
 	flex-grow: 1;
 	overflow:auto;
+	flex-basis:0;
 }
 body .getinsight
 {
@@ -1056,7 +1057,7 @@ body .getinsight
   display:inline-block;
   margin:5px;
 }
-#switchchart,#top-comp-opt,#priority-year-opt,#emergingplayer
+#switchchart,#top-comp-opt,#priority-year-opt,#emergingplayer,#comparison-reportid
 {
 	border:none;
     background-color:#F6EEE1;
@@ -1182,7 +1183,7 @@ body .getinsight
 	padding-left:20px;
 	color:#777777;
 }
-#tester
+#tester,#chart-comparison
 {
 	overflow:auto;
 }
@@ -1676,5 +1677,45 @@ body .pdfembedlink
 {
 	color:#ef3f23;
 }
+body .tranlater-div
+{
+	padding-left:20px;
+	
+}
+body .goog-te-gadget .goog-te-combo {
+    margin: 0px;
+	border:none;
+	color:#C8BEAA;
+	font-family: 'Bauziet','Telegraf','Bahnschrift', sans-serif;
+	font-size:12px;
+}
 
+.mc-iv-right-top-outer {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+   
+}
 
+div.chart-comparison-outer {
+	display:none;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+.tribute-container
+{
+	border-radius:10px;
+}
+.tribute-container ul 
+{
+    background: #f85f54;
+    color: white;
+}
+.c-mention
+{
+	color:#ef3f23;
+}
+#comment
+{
+	overflow:auto;
+}

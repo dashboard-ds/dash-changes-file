@@ -99,9 +99,94 @@ else
 			  }
 	 ?>
 	<link rel="icon" href="images/bar-chart.png" type="image/x-icon">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link href="css/flag-icon.css" rel="stylesheet">
+		<!-- Oue select dropdown -->
+		<link rel="stylesheet" href="css/chosen.css">
+		<link href="css/sumoselect.css" rel="stylesheet" />
+		<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+		<script src="https://use.fontawesome.com/9f102ed215.js"></script>
+		<link href="css/tipso.css" rel="stylesheet">
+		<link rel="icon" href="images/bar-chart.png" type="image/x-icon">
+		<link href="css/skins/minimal/red.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/pretty-checkbox.css" />
+		<link rel="stylesheet" href="css/color-picker.css" />
+		<link rel="stylesheet" href="css/tribute.css" />
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/6b23de7647.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="CSS/style.css">
+		<link rel="stylesheet" href="CSS/styles.css">
+
     <title>Home</title>
+
 	<style>
-   </style>
+
+		.bellcount {
+			position: absolute;
+			right: -4px;
+    		top: 18px;
+			border-radius: 50%;
+			font-size: 0.8rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #fff;
+			color: #ef3f23;
+			width: 12px;
+			height: 12px;
+		}
+
+		.navbelicon{
+			display: flex;
+			position: relative;
+			flex-direction: row;
+			top: 13%;
+			right: 1px;
+			border-radius: 0px;
+			height: 100%;
+			width: 5%;
+			background-color: #ef3f23;
+			justify-content: center;
+			align-items: center;
+		}
+		.bell-icon{
+			position: absolute;
+			left: -16px;
+		}
+		.navbar ul li .dropdown{
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background-color: #fff;
+			border: 1px solid #ccc;
+			padding: 1rem;
+			visibility: hidden;
+			opacity: 0;
+			width: 250px;
+			height: auto;
+    		max-height: 380px;
+			transition: 0.3s;
+			overflow: auto;
+		}
+		.fa-bell:before {
+			content: "\f0f3";
+			position: absolute;
+			top: 6px;
+		}
+
+	</style>
+
   </head>
   
   <body>
@@ -222,6 +307,54 @@ else
 		 </div>
 		 <div class='new-header-child'></div>
 		 <div class='new-header-child'><span class='wl-pr-text'>Welcome <?php echo $_SESSION["clientname"];?></span></div>
+
+		 <!--------------------------- bell icon ------------------------>
+				
+		 <nav class="navbar navbelicon">
+					<ul>
+					<li>
+						<?php $sql = "SELECT * FROM comment WHERE status='1' ORDER BY cid DESC";
+
+						$res = mysqli_query($conn, $sql); ?>
+						<a href="#" id="notifications">
+						<label for="check">
+						<!-- <i class="fa fa-bell-o" aria-hidden="true" style="position: absolute; right: 20%;"></i> -->
+						<i class="fas fa-bell fa-2x bell-icon" aria-hidden="true" style="position: absolute; right: 20%; top:6px;"></i><br/>
+				
+							<span class="bellcount"><?php echo mysqli_num_rows($res); ?></span> 
+						</label>
+						</a>
+						<input type="checkbox" class="dropdown-check" id="check" />
+						<ul class="dropdown">
+						<?php
+						if (mysqli_num_rows($res) > 0) {
+							foreach ($res as $item) {
+						?>
+							<li><?php echo $item["comment"]; ?></li>
+						<?php }
+						} ?>
+						</ul>
+					</li>
+					</ul>
+				</nav>
+
+				<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+				<script>
+					$(document).ready(function() {
+					$("#notifications").on("click", function() {
+						$.ajax({
+						url: "readNotifications.php",
+						success: function(res) {
+							console.log(res);
+						}
+						});
+					});
+					});
+				</script>
+
+				<!-------------------- bell icon ------------------->
+
 		 <div class='new-header-child top-option-bar-outer'>
 		    
 			      <?php include "clienttopnavbar.php"?>
